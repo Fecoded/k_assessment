@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <link href="./css/style.css" rel="stylesheet"></link>
+    <title>Autocomplete</title>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="d-flex flex-column justify-content-center align-items-center mt-5"
+      > 
+          <div class="py-3 px-5">
+               <div class="position-relative">
+          <input
+            type="text"
+            name="Location"
+            class="form-control"
+            id="location"
+            placeholder="Search Country"
+          />
+          <div class="suggestions position-absolute top-60px">
+            <ul></ul>
+          </div>
+        </div>
+          </div>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
