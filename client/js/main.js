@@ -1,8 +1,14 @@
 let degree = document.getElementById("degree");
 let weather_type = document.getElementById("weather_type");
 let humidity = document.getElementById("humdity");
+let name = document.getElementById("name");
+let airport_type = document.getElementById("airport_type");
+let coun = document.getElementById("country");
+let show = document.getElementById("show");
 const input = document.getElementById("location");
 const suggestions = document.querySelector(".suggestions ul");
+
+show.style.display = "none";
 
 let WEATHER_URL = "http://localhost:5000/api/v1";
 
@@ -30,6 +36,7 @@ function search(str) {
 }
 
 function searchHandler(e) {
+  show.style.display = "none";
   const inputVal = e.currentTarget.value;
   let results = [];
   if (inputVal.length > 0) {
@@ -70,9 +77,12 @@ input.addEventListener("keyup", searchHandler);
 suggestions.addEventListener("click", useSuggestion);
 
 function getAirport(country) {
+  show.style.display = "block";
   fetch(`${WEATHER_URL}/weather/autocomplete/${country}`)
     .then((data) => data.json())
     .then((data) => {
-      console.log(data);
+      name.innerHTML = data.data.name;
+      airport_type.innerHTML = data.data.type;
+      coun.innerHTML = data.data.country;
     });
 }

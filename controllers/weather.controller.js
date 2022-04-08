@@ -67,6 +67,27 @@ let data = [
     wikipedia_link: "Aero B Ranch Airport",
     keywords: "words",
   },
+  {
+    id: 6526,
+    ident: "00A",
+    type: "heliport",
+    name: "Total Rf Heliport",
+    latitude_deg: 40.07080078125,
+    longitude_deg: -74.9336013793945311,
+    elevation_ft: "NA",
+    continent: "AFRICA",
+    iso_country: "US-PA",
+    iso_region: "Bensalem",
+    country: "Germany",
+    municipality: "no",
+    scheduled_service: "00A",
+    gps_code: "00A",
+    iata_code: 323361,
+    local_code: "00AA",
+    home_link: "small_airport",
+    wikipedia_link: "Aero B Ranch Airport",
+    keywords: "words",
+  },
 ];
 
 // @desc      GET WEATHER FOR CURRENT
