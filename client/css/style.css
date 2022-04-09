@@ -1,3 +1,6 @@
+div {
+}
+
 ul {
   display: none;
   list-style-type: none;
@@ -7,15 +10,20 @@ ul {
   max-height: 200px;
   width: 200px;
   overflow-y: auto;
+  z-index: 5;
 }
 ul.has-suggestions {
+  display: block;
+  z-index: 2;
+}
+ul.has-suggestions2 {
   display: block;
   z-index: 2;
 }
 ul li {
   padding: 10px;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(255, 255, 255);
   text-decoration: none !important;
 }
 ul li:hover {

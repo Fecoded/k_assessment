@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const cors = require("cors");
 const db = require("./config/db");
+const bodyParser = require("body-parser");
 
 //Connect DB
 db.authenticate()
@@ -18,6 +19,7 @@ dotenv.config({ path: "./config/.env" });
 
 // Parse Middleware
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));

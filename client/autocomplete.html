@@ -5,53 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-      crossorigin="anonymous"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+    crossorigin="anonymous"
     />
+    <script src="https://js.stripe.com/v3/"></script>
     <link href="./css/style.css" rel="stylesheet"></link>
     <title>Autocomplete</title>
   </head>
   <body>
     <div class="container">
-      <div
-        class="d-flex flex-column justify-content-center align-items-center mt-5"
-      > 
+      <div class="d-flex justify-content-center align-items-center">
           <div class="py-3 px-5">
-               <div class="position-relative">
-          <input
-            type="text"
-            name="Location"
-            class="form-control"
-            id="location"
-            placeholder="Search Country"
-          />
-          <div class="suggestions position-absolute top-60px">
-            <ul></ul>
-          </div>
+              <div class="position-relative">
+                <input
+                  type="text"
+                  name="Location"
+                  class="form-control"
+                  id="location"
+                  placeholder="Search Country"
+                />
+            <div class="suggestions position-absolute top-60px">
+              <ul></ul>
+            </div>
         </div>
           </div>
-          <div id="show" class="card bg-light p-3 mt-5">
+          <div class="py-3 px-5">
+               <div class="position-relative">
+              <input
+                type="text"
+                name="Location"
+                class="form-control"
+                id="location2"
+                placeholder="Search Country"
+              />
+            <div class="suggestions2 position-absolute top-60px">
+              <ul></ul>
+            </div>
+        </div>
+          </div>
+      </div>
+      <div class="d-flex justify-content-center mt-5"> 
+          <div id="show" class="card bg-light p-3 mt-5" style="z-index: -1;">
               <div class="mx-auto">
               <p class="h2">Airport Details</p>
               <div class="d-flex">
                 <p class="lead">Name:</p>
-                <p id="name" class="lead text-primary pl-2">Answer</p>
+                <p id="name" class="lead text-primary pl-2">N/A</p>
               </div>
               <div class="d-flex">
                 <p class="lead">Type of Airport:</p>
-                <p id="airport_type" class="lead text-primary pl-2">Answer</p>
+                <p id="airport_type" class="lead text-primary pl-2">N/A</p>
               </div>
               <div class="d-flex">
                 <p class="lead">Country:</p>
-                <p id="country" class="lead text-primary pl-2"></p>
+                <p id="country" class="lead text-primary pl-2">N/A</p>
               </div>
             </div>
           </div>
+          <div id="show2" class="card bg-light p-3 mt-5 ml-4" style="z-index: -1;">
+              <div class="mx-auto">
+              <p class="h2">Airport Details</p>
+              <div class="d-flex">
+                <p class="lead">Name:</p>
+                <p id="name2" class="lead text-primary pl-2">N/A</p>
+              </div>
+              <div class="d-flex">
+                <p class="lead">Type of Airport:</p>
+                <p id="airport_type2" class="lead text-primary pl-2">N/A</p>
+              </div>
+              <div class="d-flex">
+                <p class="lead">Country:</p>
+                <p id="country2" class="lead text-primary pl-2">N/A</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+          <button id="show-btn" class="btn btn-primary" onclick="calculate()">Calculate Distance</button>
+        </div>
+        <p id="distance" class="text-center pt-3"></p>
+        <p id="amount" class="text-center pt-3"></p>
+        <div  class="d-flex justify-content-center">
+           <form method="post" id="payment-form" class="mt-5">
+            <div class="form-row">
+              <label for="card-element">
+                Credit or debit card
+              </label>
+              <div id="card-element">
+                <!-- A Stripe Element will be inserted here. -->
+                
+              </div>
+    
+              <!-- Used to display Element errors. -->
+              <div id="card-errors" role="alert"></div>
+            </div>
+    
+            <button class="btn btn-primary">Submit Payment</button>
+          </form>
+        </div>
       </div>
-    </div>
 
-    <script src="./js/main.js"></script>
+       
+
+      <script src="./js/main.js"></script>
+      <script src="./js/distance.js"></script>
+      
+      <script src="./js/stripe.js" ></script>
+
+
+      
   </body>
 </html>

@@ -3,6 +3,10 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Order extends Model {
     static assoicate() {}
+
+    toJSON() {
+      return { ...this.get(), id: undefined };
+    }
   }
 
   Order.init(
